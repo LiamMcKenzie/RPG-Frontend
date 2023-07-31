@@ -31,7 +31,8 @@ public class APITest : MonoBehaviour
     
     public void MakeAPIRequest()
     {
-        StartCoroutine(SendRequest());
+        //StartCoroutine(SendRequest());
+        //StartCoroutine(RegisterPlayer());
     }
 
     private IEnumerator SendRequest()
@@ -57,6 +58,37 @@ public class APITest : MonoBehaviour
         else
         {
             Debug.LogError("Error: " + request.error);
+        }
+    }
+ 
+    public IEnumerator RegisterPlayer(string playerName)
+    {
+        //playerName = "Liam02";
+        // Define the data to send in JSON format
+        
+    //  string jsonData = "{\"symbol\": \"Liam02\", \"faction\": \"COSMIC\"}";
+        string jsonData = "{\"symbol\": \"" + playerName + "\", \"faction\": \"COSMIC\"}";
+
+
+        // Set up the request
+        UnityWebRequest request = UnityWebRequest.Post("https://api.spacetraders.io/v2/register", jsonData);
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        // Send the request
+        yield return request.SendWebRequest();
+
+        // Handle the response
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            string responseText = request.downloadHandler.text;
+            Debug.Log(responseText);
+            // You can process the responseText as needed
         }
     }
 }

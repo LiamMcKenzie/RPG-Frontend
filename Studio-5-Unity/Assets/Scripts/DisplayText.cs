@@ -8,6 +8,8 @@ public class DisplayText : MonoBehaviour
     public TMP_Text tmpText;
     public APITest apiTest;
 
+    public string playerName = "Liam02";
+
     // Start is called before the first frame update
     void Start()
     {
