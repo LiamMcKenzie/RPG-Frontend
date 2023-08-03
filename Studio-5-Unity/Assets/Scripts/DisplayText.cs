@@ -19,6 +19,6 @@ public class DisplayText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmpText.text = apiTest.dataWrapper.data.symbol;
+        //tmpText.text = apiTest.dataWrapper.data.symbol;
     }
 }

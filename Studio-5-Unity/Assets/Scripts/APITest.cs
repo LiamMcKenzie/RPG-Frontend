@@ -6,7 +6,7 @@ public class APITest : MonoBehaviour
     // Make sure to replace the token with your actual API token
     private string apiToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiTElBTTAxIiwidmVyc2lvbiI6InYyIiwicmVzZXRfZGF0ZSI6IjIwMjMtMDctMjkiLCJpYXQiOjE2OTA3NjUwMDgsInN1YiI6ImFnZW50LXRva2VuIn0.bc-L2YiMNmz9Gdr1DT4MjwIGtMiISBqjroYL9Xr69fWv8lVP8epLOEjs0UYfE8L9j9jTzcTekEVXcM8sAPnOBNBQC871e1soE9wOFuePVv9hmTH3r4B3mxQ7yHN2uYowvnEGjcn_1XsphnhX40pEsXBt7xdEfALXyCs_1r5y1nkcKfZSL7gmudDrAFXs8OkR1o077TYrU7jQLGtFSOZo0lOuWx8IgQArGejfJGsvNWYbqrqGRQcsg5wMCBQO1Rd-CNpWfGR-ey1gVew8fDUcJH01IV8IgB5dykt2wKhx7A2Bhp66yzXZGlW-1Bx-4isXQtHY2aQva_8fb77iuBo_uw";
     private string apiUrl = "https://api.spacetraders.io/v2/my/agent";
-    public DataWrapper dataWrapper; 
+    public RegisterData registerData; 
     
     [System.Serializable]
     public class PlayerData
@@ -19,9 +19,15 @@ public class APITest : MonoBehaviour
     }
 
     [System.Serializable]
-    public class DataWrapper
+    public class RegisterData
     {
-        public PlayerData data;
+        public PlayerRegister data;
+    }
+
+    [System.Serializable]
+    public class PlayerRegister
+    {
+        public string token;
     }
 
     public void Start()
@@ -35,6 +41,7 @@ public class APITest : MonoBehaviour
         //StartCoroutine(RegisterPlayer());
     }
 
+    /*
     private IEnumerator SendRequest()
     {
         UnityWebRequest request = UnityWebRequest.Get(apiUrl);
@@ -59,14 +66,10 @@ public class APITest : MonoBehaviour
         {
             Debug.LogError("Error: " + request.error);
         }
-    }
+    }*/
  
     public IEnumerator RegisterPlayer(string playerName)
     {
-        //playerName = "Liam02";
-        // Define the data to send in JSON format
-        
-    //  string jsonData = "{\"symbol\": \"Liam02\", \"faction\": \"COSMIC\"}";
         string jsonData = "{\"symbol\": \"" + playerName + "\", \"faction\": \"COSMIC\"}";
 
 
@@ -88,6 +91,10 @@ public class APITest : MonoBehaviour
         {
             string responseText = request.downloadHandler.text;
             Debug.Log(responseText);
+            registerData = JsonUtility.FromJson<RegisterData>(responseText);
+            // Now you can access the properties of MyData through the DataWrapper class
+            PlayerRegister myData = registerData.data;
+
             // You can process the responseText as needed
         }
     }
