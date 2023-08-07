@@ -5,19 +5,22 @@ using TMPro;
 
 public class SubmitRegister : MonoBehaviour
 {
-    public TMP_InputField tmpText;
+    public TMP_InputField usernameTMP;
+    public TMP_InputField passwordTMP;
     public APITest apiTest;
-    public string playerName = "Liam02";
+    public string username = "username";
+    public string password = "password";
   
 
     public void Update()
     {
-        playerName = tmpText.text;
+        username = usernameTMP.text;
+        password = passwordTMP.text;
     }
 
     public void MakeAPIRequest()
     {
-        StartCoroutine(apiTest.RegisterPlayer(playerName));
+        StartCoroutine(apiTest.RegisterPlayer(username, password));
         //StartCoroutine(SendRequest());
         
     }
