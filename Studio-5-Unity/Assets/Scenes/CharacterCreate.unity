@@ -2538,6 +2538,7 @@ GameObject:
   - component: {fileID: 336045117}
   - component: {fileID: 336045116}
   - component: {fileID: 336045115}
+  - component: {fileID: 336045118}
   m_Layer: 5
   m_Name: Button_DecrStat
   m_TagString: Untagged
@@ -2609,7 +2610,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 336045116}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 336045118}
+        m_TargetAssemblyTypeName: StatChanger, Assembly-CSharp
+        m_MethodName: decreaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &336045116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,6 +2661,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336045113}
   m_CullTransparentMesh: 1
+--- !u!114 &336045118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336045113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e60f828eff3e45835f7918dadab01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statText: {fileID: 1937253325}
+  remainingText: {fileID: 1025826473}
 --- !u!1 &383673712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,6 +2957,7 @@ GameObject:
   - component: {fileID: 420935089}
   - component: {fileID: 420935088}
   - component: {fileID: 420935087}
+  - component: {fileID: 420935090}
   m_Layer: 5
   m_Name: Button_DecrStat
   m_TagString: Untagged
@@ -3001,7 +3029,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 420935088}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 420935090}
+        m_TargetAssemblyTypeName: StatChanger, Assembly-CSharp
+        m_MethodName: decreaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &420935088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3040,6 +3080,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420935085}
   m_CullTransparentMesh: 1
+--- !u!114 &420935090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420935085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e60f828eff3e45835f7918dadab01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statText: {fileID: 95045933}
+  remainingText: {fileID: 1025826473}
 --- !u!1 &435281575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,6 +3945,7 @@ GameObject:
   - component: {fileID: 802658202}
   - component: {fileID: 802658201}
   - component: {fileID: 802658200}
+  - component: {fileID: 802658203}
   m_Layer: 5
   m_Name: Button_DecrStat
   m_TagString: Untagged
@@ -3912,7 +3967,7 @@ RectTransform:
   m_Children:
   - {fileID: 1408454050}
   m_Father: {fileID: 1106817874}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3962,7 +4017,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 802658201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 802658203}
+        m_TargetAssemblyTypeName: StatChanger, Assembly-CSharp
+        m_MethodName: decreaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &802658201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4001,6 +4068,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802658198}
   m_CullTransparentMesh: 1
+--- !u!114 &802658203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802658198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e60f828eff3e45835f7918dadab01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statText: {fileID: 1957427609}
+  remainingText: {fileID: 1025826473}
 --- !u!1 &805185825
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,7 +4791,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1106817874}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4879,6 +4960,7 @@ GameObject:
   - component: {fileID: 916769754}
   - component: {fileID: 916769753}
   - component: {fileID: 916769752}
+  - component: {fileID: 916769755}
   m_Layer: 5
   m_Name: Button_IncrStat
   m_TagString: Untagged
@@ -4950,7 +5032,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 916769753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 916769755}
+        m_TargetAssemblyTypeName: StatChanger, Assembly-CSharp
+        m_MethodName: increaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &916769753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4989,6 +5083,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 916769750}
   m_CullTransparentMesh: 1
+--- !u!114 &916769755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916769750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e60f828eff3e45835f7918dadab01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statText: {fileID: 86631938}
+  remainingText: {fileID: 1025826473}
 --- !u!1 &963163148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5331,7 +5439,7 @@ GameObject:
   - component: {fileID: 1025826474}
   - component: {fileID: 1025826473}
   m_Layer: 5
-  m_Name: TMP_DexterityStat
+  m_Name: TMP_PointsRem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5377,7 +5485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -5466,6 +5574,7 @@ GameObject:
   - component: {fileID: 1031550432}
   - component: {fileID: 1031550431}
   - component: {fileID: 1031550430}
+  - component: {fileID: 1031550433}
   m_Layer: 5
   m_Name: Button_IncrStat
   m_TagString: Untagged
@@ -5487,7 +5596,7 @@ RectTransform:
   m_Children:
   - {fileID: 1487163249}
   m_Father: {fileID: 1106817874}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5537,7 +5646,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1031550431}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1031550433}
+        m_TargetAssemblyTypeName: StatChanger, Assembly-CSharp
+        m_MethodName: increaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1031550431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5576,6 +5697,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031550428}
   m_CullTransparentMesh: 1
+--- !u!114 &1031550433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031550428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e60f828eff3e45835f7918dadab01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statText: {fileID: 1957427609}
+  remainingText: {fileID: 1025826473}
 --- !u!1 &1052137508
 GameObject:
   m_ObjectHideFlags: 0
@@ -5664,6 +5799,7 @@ GameObject:
   - component: {fileID: 1098491047}
   - component: {fileID: 1098491046}
   - component: {fileID: 1098491045}
+  - component: {fileID: 1098491048}
   m_Layer: 5
   m_Name: Button_IncrStat
   m_TagString: Untagged
@@ -5735,7 +5871,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1098491046}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1098491048}
+        m_TargetAssemblyTypeName: StatChanger, Assembly-CSharp
+        m_MethodName: increaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1098491046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5774,6 +5922,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098491043}
   m_CullTransparentMesh: 1
+--- !u!114 &1098491048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098491043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e60f828eff3e45835f7918dadab01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statText: {fileID: 1937253325}
+  remainingText: {fileID: 1025826473}
 --- !u!1 &1106817873
 GameObject:
   m_ObjectHideFlags: 0
@@ -5806,7 +5968,6 @@ RectTransform:
   m_Children:
   - {fileID: 494315511}
   - {fileID: 1741925300}
-  - {fileID: 1957427608}
   - {fileID: 1031550429}
   - {fileID: 802658199}
   - {fileID: 844819701}
@@ -6026,6 +6187,7 @@ GameObject:
   - component: {fileID: 1190439354}
   - component: {fileID: 1190439353}
   - component: {fileID: 1190439352}
+  - component: {fileID: 1190439355}
   m_Layer: 5
   m_Name: Button_DecrStat
   m_TagString: Untagged
@@ -6097,7 +6259,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1190439353}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1190439355}
+        m_TargetAssemblyTypeName: StatChanger, Assembly-CSharp
+        m_MethodName: decreaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1190439353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6136,6 +6310,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190439350}
   m_CullTransparentMesh: 1
+--- !u!114 &1190439355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190439350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e60f828eff3e45835f7918dadab01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statText: {fileID: 86631938}
+  remainingText: {fileID: 1025826473}
 --- !u!1 &1204214362
 GameObject:
   m_ObjectHideFlags: 0
@@ -7262,6 +7450,7 @@ GameObject:
   - component: {fileID: 1403286115}
   - component: {fileID: 1403286114}
   - component: {fileID: 1403286113}
+  - component: {fileID: 1403286116}
   m_Layer: 5
   m_Name: Button_IncrStat
   m_TagString: Untagged
@@ -7333,7 +7522,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1403286114}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1403286116}
+        m_TargetAssemblyTypeName: StatChanger, Assembly-CSharp
+        m_MethodName: increaseStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1403286114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7372,6 +7573,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403286111}
   m_CullTransparentMesh: 1
+--- !u!114 &1403286116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403286111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2e60f828eff3e45835f7918dadab01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statText: {fileID: 95045933}
+  remainingText: {fileID: 1025826473}
 --- !u!1 &1408454049
 GameObject:
   m_ObjectHideFlags: 0
@@ -8128,7 +8343,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1957427608}
   m_Father: {fileID: 1106817874}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8481,13 +8697,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957427607}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1106817874}
-  m_RootOrder: 2
+  m_Father: {fileID: 1741925300}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8603,7 +8819,7 @@ GameObject:
   - component: {fileID: 1961123571}
   - component: {fileID: 1961123570}
   m_Layer: 5
-  m_Name: TMP_DexterityTitle
+  m_Name: TMP_PointRemTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
