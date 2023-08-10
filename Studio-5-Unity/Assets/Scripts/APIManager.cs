@@ -10,6 +10,7 @@ public class APIManager : MonoBehaviour
     public DataWrapper dataWrapper; 
 
     public bool isLoading = false;
+    public UnityWebRequest.Result requestResult;
     
     [System.Serializable]
     public class PlayerData
@@ -97,5 +98,12 @@ public class APIManager : MonoBehaviour
             Debug.Log(responseText);
             // You can process the responseText as needed
         }
+
+        Debug.Log(request.result + ", " + path);
+        if(request.result == UnityWebRequest.Result.Success && path == "auth/register"){
+            StartCoroutine(PostRequest(username, password, "auth/login"));
+        }
+        requestResult = request.result;
+
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Networking;
 
 public class SubmitRegister : MonoBehaviour
 {
@@ -19,10 +20,13 @@ public class SubmitRegister : MonoBehaviour
         password = passwordTMP.text;
     }
 
-    public void MakeAPIRequest()
+    public void RegisterRequest()
     {
-        StartCoroutine(apiManager.PostRequest(username, password, path));
-        //StartCoroutine(SendRequest());
-        
+        StartCoroutine(apiManager.PostRequest(username, password, "auth/register"));
+    }
+
+    public void LoginRequest()
+    {
+        StartCoroutine(apiManager.PostRequest(username, password, "auth/login"));
     }
 }
