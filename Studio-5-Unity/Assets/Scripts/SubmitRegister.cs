@@ -7,9 +7,10 @@ public class SubmitRegister : MonoBehaviour
 {
     public TMP_InputField usernameTMP;
     public TMP_InputField passwordTMP;
-    public APITest apiTest;
+    public APIManager apiManager;
     public string username = "username";
     public string password = "password";
+    public string path;
   
 
     public void Update()
@@ -20,7 +21,7 @@ public class SubmitRegister : MonoBehaviour
 
     public void MakeAPIRequest()
     {
-        StartCoroutine(apiTest.RegisterPlayer(username, password));
+        StartCoroutine(apiManager.PostRequest(username, password, path));
         //StartCoroutine(SendRequest());
         
     }

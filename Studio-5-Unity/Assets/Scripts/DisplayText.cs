@@ -6,7 +6,7 @@ using TMPro;
 public class DisplayText : MonoBehaviour
 {
     public TMP_Text tmpText;
-    public APITest apiTest;
+    public APIManager apiManager;
 
     public string playerName = "Liam02";
 
@@ -19,6 +19,6 @@ public class DisplayText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmpText.text = apiTest.dataWrapper.data.symbol;
+        tmpText.text = apiManager.dataWrapper.data.symbol;
     }
 }
