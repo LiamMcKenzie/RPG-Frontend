@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class KeyboardManager : MonoBehaviour
 {
+    public Button loginButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,12 @@ public class KeyboardManager : MonoBehaviour
             Selectable jump = Input.GetKey(KeyCode.LeftShift)
                 ? s.FindSelectableOnUp() : s.FindSelectableOnDown();
             if (jump != null) { jump.Select(); }
+        }
+
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            Debug.Log("hi");
+            loginButton.onClick.Invoke();
         }
     }
 }
