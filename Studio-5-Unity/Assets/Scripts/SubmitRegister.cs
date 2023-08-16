@@ -2,23 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Networking;
 
 public class SubmitRegister : MonoBehaviour
 {
-    public TMP_InputField tmpText;
-    public APITest apiTest;
-    public string playerName = "Liam02";
-  
+    public TMP_InputField usernameTMP;
+    public TMP_InputField passwordTMP;
+    public TMP_InputField confirmPasswordTMP;
+    public APIManager apiManager;
+
+    private string username = "";
+    private string password = "";
+    private string confirmPassword = "";
 
     public void Update()
     {
-        playerName = tmpText.text;
+        username = usernameTMP.text;
+        password = passwordTMP.text;
+        confirmPassword = confirmPasswordTMP.text;
     }
 
-    public void MakeAPIRequest()
+    public void RegisterRequest()
     {
-        StartCoroutine(apiTest.RegisterPlayer(playerName));
-        //StartCoroutine(SendRequest());
-        
+        if (password == confirmPassword)
+        {
+            StartCoroutine(apiManager.RegisterAndLogin(username, password));
+        }
+        else
+        {
+            Debug.LogError("Passwords do not match!");
+        }
+    }
+
+    public void LoginRequest()
+    {
+        StartCoroutine(apiManager.PostRequest(username, password, "auth/login"));
     }
 }
