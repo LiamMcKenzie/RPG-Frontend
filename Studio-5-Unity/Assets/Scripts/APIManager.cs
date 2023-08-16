@@ -5,7 +5,11 @@ using UnityEngine.Networking;
 public class APIManager : MonoBehaviour
 {
     //private string jwtSecret = "Pazzw0rd123";
+    
+    [SerializeField]
     private string authToken;
+
+    [SerializeField]
     private UnityWebRequest.Result requestResult;
 
     [System.Serializable]
