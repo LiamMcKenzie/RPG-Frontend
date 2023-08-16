@@ -4,8 +4,9 @@ using UnityEngine.Networking;
 
 public class APIManager : MonoBehaviour
 {
-    private string jwtSecret = "Pazzw0rd123";
+    //private string jwtSecret = "Pazzw0rd123";
     private string authToken;
+    private UnityWebRequest.Result requestResult;
 
     [System.Serializable]
     public class PlayerData
@@ -85,7 +86,7 @@ public class APIManager : MonoBehaviour
         }
     }
 
-    private IEnumerator PostRequest(string username, string password, string path)
+    public IEnumerator PostRequest(string username, string password, string path)
     {
         string jsonData = $"{{\"username\": \"{username}\", \"password\": \"{password}\"}}";
 
