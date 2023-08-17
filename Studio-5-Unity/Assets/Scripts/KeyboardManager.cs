@@ -30,7 +30,7 @@ public class KeyboardManager : MonoBehaviour
             if (jump != null) { jump.Select(); }
         }
 
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(Input.GetKeyDown(KeyCode.Return) && enterButton.interactable)
         {
             Debug.Log("hi");
             enterButton.onClick.Invoke();
