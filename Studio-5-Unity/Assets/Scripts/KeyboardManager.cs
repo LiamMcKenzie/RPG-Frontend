@@ -6,11 +6,12 @@ using UnityEngine.UI;
 
 public class KeyboardManager : MonoBehaviour
 {
-    public Button loginButton;
+    public Button enterButton;
+    public static KeyboardManager Instance;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class KeyboardManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Return))
         {
             Debug.Log("hi");
-            loginButton.onClick.Invoke();
+            enterButton.onClick.Invoke();
         }
     }
 }

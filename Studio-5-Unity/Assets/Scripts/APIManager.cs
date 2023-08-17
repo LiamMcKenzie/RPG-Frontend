@@ -100,10 +100,13 @@ public class APIManager : MonoBehaviour
         }
 
         Debug.Log(request.result + ", " + path);
+        
         if(request.result == UnityWebRequest.Result.Success && path == "auth/register"){
             StartCoroutine(PostRequest(username, password, "auth/login"));
         }
         requestResult = request.result;
+
+        request.Dispose();
 
     }
 }

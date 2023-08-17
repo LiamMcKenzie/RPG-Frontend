@@ -1,21 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIObjectActive : MonoBehaviour
 {
     public GameObject selectedObject;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject deselectedObject;
+    public Button enterButton;
 
     public void DisableObject ()
     {
@@ -25,5 +17,12 @@ public class UIObjectActive : MonoBehaviour
     public void EnableObject ()
     {
         selectedObject.SetActive(true);
+    }
+
+    public void CloseAndEnable()
+    {
+        deselectedObject.SetActive(false);
+        selectedObject.SetActive(true);
+        KeyboardManager.Instance.enterButton = enterButton;
     }
 }
