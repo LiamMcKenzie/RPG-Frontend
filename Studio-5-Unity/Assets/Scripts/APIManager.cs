@@ -4,7 +4,6 @@ using UnityEngine.Networking;
 
 public class APIManager : MonoBehaviour
 {
-    //private string jwtSecret = "Pazzw0rd123";
     
     [SerializeField]
     private string authToken;
@@ -15,8 +14,8 @@ public class APIManager : MonoBehaviour
     [System.Serializable]
     public class PlayerData
     {
-        public string accountId;
-        public string gender;
+        public string playerName;
+        public string playerHealth;
         public string playerClass;
     }
 
@@ -52,7 +51,7 @@ public class APIManager : MonoBehaviour
 
     private IEnumerator GetPlayerData()
     {
-        UnityWebRequest request = UnityWebRequest.Get("http://localhost:3000/api/v1/my/agent");
+        UnityWebRequest request = UnityWebRequest.Get("http://localhost:3000/api/v1/character");
         request.SetRequestHeader("Content-Type", "application/json");
         AddAuthHeader(request);
         yield return request.SendWebRequest();
@@ -65,8 +64,8 @@ public class APIManager : MonoBehaviour
             DataWrapper dataWrapper = JsonUtility.FromJson<DataWrapper>(responseText);
             PlayerData playerData = dataWrapper.data;
 
-            Debug.Log("Account ID: " + playerData.accountId);
-            Debug.Log("Gender: " + playerData.gender);
+            Debug.Log("Account ID: " + playerData.playerName);
+            Debug.Log("Player Health: " + playerData.playerHealth);
             Debug.Log("Player Class: " + playerData.playerClass);
         }
         else

@@ -6,18 +6,18 @@ using UnityEngine.Networking;
 
 public class SubmitRegister : MonoBehaviour
 {
-    public TMP_InputField emailInputField; // Reference to the email input field
+    public TMP_InputField usernameInputField; // Reference to the username input field
     public TMP_InputField passwordTMP;
     public TMP_InputField confirmPasswordTMP;
     public APIManager apiManager;
 
-    private string email = ""; // String to hold user's entered email
+    private string username = ""; // String to hold user's entered username
     private string password = "";
     private string confirmPassword = "";
 
     public void Update()
     {
-        email = emailInputField.text; // Capture email input
+        username = usernameInputField.text; // Capture username input
         password = passwordTMP.text;
         confirmPassword = confirmPasswordTMP.text;
     }
@@ -26,7 +26,7 @@ public class SubmitRegister : MonoBehaviour
     {
         if (password == confirmPassword)
         {
-            StartCoroutine(apiManager.RegisterAndLogin(email, password)); // Pass email instead of username
+            StartCoroutine(apiManager.RegisterAndLogin(username, password));
         }
         else
         {
@@ -36,6 +36,7 @@ public class SubmitRegister : MonoBehaviour
 
     public void LoginRequest()
     {
-        StartCoroutine(apiManager.PostRequest(email, password, "auth/login")); // Pass email instead of username
+        Debug.Log("button pressed");
+        StartCoroutine(apiManager.PostRequest(username, password, "auth/login"));
     }
 }
