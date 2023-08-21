@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 public class APIManager : MonoBehaviour
 {
     public static APIManager Instance;
@@ -104,6 +105,11 @@ public class APIManager : MonoBehaviour
         if(request.result == UnityWebRequest.Result.Success && path == "auth/register"){
             StartCoroutine(PostRequest(username, password, "auth/login"));
         }
+
+        if(request.result == UnityWebRequest.Result.Success && path == "auth/login"){
+            SceneManager.LoadScene("New Scene");
+        }
+
         requestResult = request.result;
 
         request.Dispose();
