@@ -7302,7 +7302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e53f59d15ff32a4ca4ca3413647fd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneChangeTo: Titlescreen
+  sceneChangeTo: Title Screen
 --- !u!1 &1257523307
 GameObject:
   m_ObjectHideFlags: 0

@@ -107,7 +107,7 @@ public class APIManager : MonoBehaviour
         }
 
         if(request.result == UnityWebRequest.Result.Success && path == "auth/login"){
-            SceneManager.LoadScene("New Scene");
+            SceneManager.LoadScene("CharacterCreate");
         }
 
         requestResult = request.result;
