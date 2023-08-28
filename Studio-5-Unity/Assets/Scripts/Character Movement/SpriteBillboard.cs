@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+using UnityEngine.SocialPlatforms.GameCenter;
 
 public class SpriteBillboard : MonoBehaviour
 {
     [SerializeField] bool freezeXZAxis = true;
+    [SerializeField] CinemachineVirtualCamera vcam;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +20,11 @@ public class SpriteBillboard : MonoBehaviour
     {
         if (freezeXZAxis)
         {
-            transform.rotation = Quaternion.Euler(0f, Camera.main.transform.rotation.eulerAngles.y, 0f);
+            transform.rotation = Quaternion.Euler(0f, vcam.transform.rotation.eulerAngles.y, 0f);
         }
         else
         {
-            transform.rotation = Camera.main.transform.rotation;
+            transform.rotation = vcam.transform.rotation;
         }
     }
 }
