@@ -7,17 +7,6 @@ using UnityEngine.SceneManagement;
 public class NewCharacter : MonoBehaviour
 {
     public UnityWebRequest.Result requestResult;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public IEnumerator PostRequest(string name, string buildId, string gender)
     {
@@ -34,6 +23,7 @@ public class NewCharacter : MonoBehaviour
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.SetRequestHeader("Content-Type", "application/json");
+        request.SetRequestHeader("Authorization", "Bearer " + APIToken.token);
         //APIManager.Instance.isLoading = true;
         //isLoading = true;
         // Send the request
@@ -59,4 +49,135 @@ public class NewCharacter : MonoBehaviour
         request.Dispose();
 
     }
+
+    public IEnumerator NewSeedBuild()
+    {
+        UnityWebRequest request = UnityWebRequest.Get($"http://localhost:3000/api/v1/builds/create");
+
+        request.SetRequestHeader("Authorization", "Bearer " + APIToken.token);
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            string responseText = request.downloadHandler.text;
+            Debug.Log(responseText);
+            Debug.Log("Request successful!");
+        }
+    }
+
+/*
+    public IEnumerator NewPostRequest()
+    {
+        string requestBody = $"{{\"name\": \"{"bob222"}\", \"gender\": \"{"MALE"}\", \"buildId\": \"{1}\"}}";
+
+
+        UnityWebRequest request = UnityWebRequest.Post($"http://localhost:3000/api/v1/character/create", requestBody);
+
+        request.SetRequestHeader("Authorization", "Bearer " + APIToken.token);
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            Debug.Log("Request successful!");
+        }
+        
+    }*/
+
+    public IEnumerator NewPostRequest()
+    {
+        // Create a JSON object to represent the data
+        var requestData = new
+        {
+            name = "bob222",
+            gender = "MALE",
+            buildId = 1
+        };
+
+        // Convert the object to a JSON string
+        string jsonRequestBody = JsonUtility.ToJson(requestData);
+
+        // Create a POST request with the API endpoint
+        UnityWebRequest request = UnityWebRequest.Post("http://localhost:3000/api/v1/character/create", jsonRequestBody);
+
+        // Set headers
+        request.SetRequestHeader("Authorization", "Bearer " + APIToken.token);
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        // Attach the request body as a byte array
+        byte[] requestBodyBytes = System.Text.Encoding.UTF8.GetBytes(jsonRequestBody);
+        request.uploadHandler = new UploadHandlerRaw(requestBodyBytes);
+        
+        // Send the request and wait for the response
+        yield return request.SendWebRequest();
+
+        // Check for errors
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            Debug.Log("Request successful!");
+        }
+    }
+
+
+    public IEnumerator NewGetAllCharacters()
+    {
+        UnityWebRequest request = UnityWebRequest.Get($"http://localhost:3000/api/v1/character");
+
+        request.SetRequestHeader("Authorization", "Bearer " + APIToken.token);
+        request.SetRequestHeader("Content-Type", "application/json");
+
+        yield return request.SendWebRequest();
+
+        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+        else
+        {
+            string responseText = request.downloadHandler.text;
+            Debug.Log(responseText);
+            Debug.Log("Request successful!");
+        }
+    }
+    /*
+    private IEnumerator SendRequest()
+    {
+        UnityWebRequest request = UnityWebRequest.Post($"http://localhost:3000/api/v1/character/create", jsonData);
+        request.SetRequestHeader("Content-Type", "application/json");
+        request.SetRequestHeader("Authorization", "Bearer " + apiToken);
+        yield return request.SendWebRequest();
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            string responseText = request.downloadHandler.text;
+            Debug.Log(responseText);
+            
+            dataWrapper = JsonUtility.FromJson<DataWrapper>(responseText);
+            // Now you can access the properties of MyData through the DataWrapper class
+            PlayerData myData = dataWrapper.data;
+            Debug.Log("Account ID: " + myData.accountId);
+            Debug.Log("Symbol: " + myData.symbol);
+            Debug.Log("Headquarters: " + myData.headquarters);
+            Debug.Log("Credits: " + myData.credits);
+            Debug.Log("Starting Faction: " + myData.startingFaction);
+        }
+        else
+        {
+            Debug.LogError("Error: " + request.error);
+        }
+    }*/
 }

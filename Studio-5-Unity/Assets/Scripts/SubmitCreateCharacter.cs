@@ -14,7 +14,8 @@ public class SubmitCreateCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(characterManager.NewGetAllCharacters());
+        StartCoroutine(characterManager.NewSeedBuild());
     }
 
     // Update is called once per frame
@@ -25,6 +26,8 @@ public class SubmitCreateCharacter : MonoBehaviour
 
     public void CreateCharacter()
     {
-        StartCoroutine(characterManager.PostRequest(name, "1", gender));
+        //Debug.Log(APIToken.token);
+        StartCoroutine(characterManager.NewPostRequest());
+        
     }
 }
