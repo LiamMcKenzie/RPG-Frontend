@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public SpriteRenderer sr;
 
+    private bool jumpActive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
         castPos.y += 1;
         if (Physics.Raycast(castPos, -transform.up, out hit, Mathf.Infinity, terrainLayer))
         {
-            if (hit.collider != null)
+            if (hit.collider != null && jumpActive == false)
             {
                 Vector3 movePos = transform.position;
                 movePos.y = hit.point.y + groundDist;
@@ -47,8 +49,15 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(transform.up * 200f);
+            jumpActive = true;
+            rb.AddForce(transform.up * 2000f);
         }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            jumpActive = false;
+        }
+
 
         if (moveDir.magnitude > 1)
         {
