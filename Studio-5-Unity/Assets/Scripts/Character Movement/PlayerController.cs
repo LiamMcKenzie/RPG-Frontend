@@ -38,12 +38,26 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //Flips sprite direction depending on direction of movement
+
         float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        Vector3 moveDir = new Vector3(x, 0, y);
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 moveDir = new Vector3(x, 0, z);
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(transform.up * 200f);
+        }
+
+        if (moveDir.magnitude > 1)
+        {
+            moveDir.Normalize();
+        }
+
         rb.velocity = moveDir * speed;
 
+        //Flips sprite direction depending on direction of movement
         if (x != 0 && x < 0)
         {
             sr.flipX = true;
