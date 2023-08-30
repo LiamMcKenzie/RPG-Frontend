@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749154018}
   m_LocalRotation: {x: 0.14867246, y: -0, z: -0, w: 0.98888654}
-  m_LocalPosition: {x: 0, y: 2.9404037, z: -24.55793}
+  m_LocalPosition: {x: 0, y: 2.940404, z: -24.55793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -208,8 +208,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 3.01
+  m_Center: {x: 0.24, y: -8.4, z: 0.09}
 --- !u!54 &6001499780826276775
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -238,13 +238,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c04592d8ed494c45babee91445a1fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  groundDist: 8.57
+  moveSpeed: 30
+  groundDist: 8.49
   terrainLayer:
     serializedVersion: 2
     m_Bits: 64
   rb: {fileID: 6001499780826276775}
   sr: {fileID: 6001499781224192861}
+  animator: {fileID: 0}
 --- !u!212 &1366353553
 SpriteRenderer:
   m_ObjectHideFlags: 0
