@@ -84,11 +84,11 @@ public class APIManager : MonoBehaviour
         
         
         //string jsonData = "{\"symbol\": \"" + username + "\", \"faction\": \"COSMIC\"}";
-        string jsonData = $"{{\"username\": \"{username}\", \"password\": \"{password}\", \"role\": \"{"SUPER_ADMIN"}\"}}";
-
+        //string jsonData = $"{{\"username\": \"{username}\", \"password\": \"{password}\", \"role\": \"{"SUPER_ADMIN"}\"}}";
+        string jsonData = $"{{\"username\": \"{username}\", \"password\": \"{password}\"}}";
 
         // Set up the request
-        UnityWebRequest request = UnityWebRequest.Post($"http://localhost:3000/api/v1/{path}", jsonData);
+        UnityWebRequest request = UnityWebRequest.Post($"http://studio6-api-host.op-bit.nz/api/v1/{path}", jsonData);
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
         request.uploadHandler = new UploadHandlerRaw(bodyRaw);
         request.SetRequestHeader("Content-Type", "application/json");
@@ -127,6 +127,5 @@ public class APIManager : MonoBehaviour
         requestResult = request.result;
 
         request.Dispose();
-
     }
 }
