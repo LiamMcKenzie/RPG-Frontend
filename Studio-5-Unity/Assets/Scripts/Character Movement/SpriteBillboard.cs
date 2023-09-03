@@ -1,21 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using UnityEngine.SocialPlatforms.GameCenter;
 
 public class SpriteBillboard : MonoBehaviour
 {
-    [SerializeField] bool freezeXZAxis = true;
-    [SerializeField] CinemachineVirtualCamera vcam;
+    [SerializeField] bool freezeXZAxis = true; //Rotate sprites only around y-axis
+    [SerializeField] CinemachineVirtualCamera vcam; //Attached Player Camera
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    /// <summary>
+    /// Rotates sprite to face camera. Main rotation around Y axis if checked (locks objects to ground)
+    /// </summary>
     void Update()
     {
         if (freezeXZAxis)
