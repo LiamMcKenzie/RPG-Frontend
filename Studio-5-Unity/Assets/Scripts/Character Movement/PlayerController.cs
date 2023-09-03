@@ -3,38 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Xml.Serialization;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Terrain Collision Variables")]
-    public float groundDist; //Snapping distance to the ground
-    public LayerMask terrainLayer;
-
     [Header("Player Movement Variables")]
     public float moveSpeed;  //Controls the players movement speed
     private PlayerStates currentState; //Check for current animation needed
 
     [Header("Jump Variables")]
-    public float jumpHeight;
+    public float jumpHeight; //Controls the players jump height
     public bool grounded;
 
     [Header("Components required for movement/animation")]
     public Rigidbody rb;
     public SpriteRenderer sr;
+    public BoxCollider bc;
     public Animator animator;
 
     /// <summary>
-    /// Enumerates the possible animation states for the player character in the animator.
+    /// Possible animation states for the player character in the animator.
     /// </summary>
     public enum PlayerStates
-    {
-        IDLE,
-        WALK,
-        ATTACK,
-        DIE
-    }
+    { IDLE, WALK, ATTACK, DIE }
 
     /// <summary>
     /// Handles the switching and setting of the current animation state.
@@ -71,17 +64,16 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        bc = gameObject.GetComponent<BoxCollider>();
         animator = GetComponent<Animator>();
         grounded = false;
     }
 
     /// <summary>
-    /// Updates the player's movement, input handling, and animation based on user input and terrain collisions.
+    /// Updates the player's movement, input handling, and animation based on user input.
     /// </summary>
     void Update()
     {   
-        //CastTerrain(); //Raycast for the terrain layer to check player collision
-
         //Controls movement input for the player
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -89,29 +81,9 @@ public class PlayerController : MonoBehaviour
         moveDir.y = rb.velocity.y;
         rb.velocity = moveDir;
 
-
-        jumpCheck();
+        jumpCheck();   //Check if jumping
         FlipSprite(x); //Check if sprite needs flipped
         AnimationCheck(x, z); //Check if animation state needs to change
-    }
-
-    /// <summary>
-    /// Casts a ray to check if the player is below the terrain height and adjusts the player's position to snap to the ground.
-    /// </summary>   
-    private void CastTerrain()
-    {
-        RaycastHit hit;
-        Vector3 castPos = transform.position;
-        castPos.y += 1;
-        if (Physics.Raycast(castPos, -transform.up, out hit, Mathf.Infinity, terrainLayer))
-        {
-            if (hit.collider != null)
-            {
-                Vector3 movePos = transform.position;
-                movePos.y = hit.point.y + groundDist;
-                transform.position = movePos;
-            }
-        }
     }
 
     /// <summary>
@@ -152,20 +124,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if the player has pressed space to jump. Will only jump while grounded
+    /// </summary>
     private void jumpCheck()
     {
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            rb.AddForce(transform.up * jumpHeight, ForceMode.Impulse);
+            rb.AddForce(transform.up * (jumpHeight * 9.81f), ForceMode.Impulse);
         }
     }
+
+    /// <summary>
+    /// When the player collider hits the ground, enable jumping again
+    /// </summary>
+    /// <param name="collision">Floor/Object below the player</param>
     private void OnCollisionEnter(Collision collision)
     {
-        grounded = true;
+        grounded = !grounded;
+        Debug.Log("Grounded State: " + grounded);
     }
 
+    /// <summary>
+    /// When the player jumps, disable ability to jump again
+    /// </summary>
+    /// <param name="collision">Floor/Object below the player</param>
     private void OnCollisionExit(Collision collision)
     {
-        grounded = false;
+        grounded = !grounded;
+        Debug.Log("Grounded State: " + grounded);
     }
 }
