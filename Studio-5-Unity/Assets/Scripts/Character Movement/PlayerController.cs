@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            rb.AddForce(transform.up * (jumpHeight * 9.81f), ForceMode.Impulse);
+            rb.AddForce(transform.up * (jumpHeight * -(Physics.gravity.y)), ForceMode.Impulse);
         }
     }
 
