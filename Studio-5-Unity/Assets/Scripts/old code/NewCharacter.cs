@@ -71,7 +71,7 @@ public class NewCharacter : MonoBehaviour
         }
     }
 
-/*
+    /*
     public IEnumerator NewPostRequest()
     {
         string requestBody = $"{{\"name\": \"{"bob222"}\", \"gender\": \"{"MALE"}\", \"buildId\": \"{1}\"}}";
@@ -154,6 +154,7 @@ public class NewCharacter : MonoBehaviour
             Debug.Log("Request successful!");
         }
     }
+    
     /*
     private IEnumerator SendRequest()
     {
