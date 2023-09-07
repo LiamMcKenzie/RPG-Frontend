@@ -9,7 +9,6 @@ public class APIManagerNew : MonoBehaviour
     public static APIManagerNew instance;
     public LoginData myData;
     public bool isLoading = false;
-    public string responseText;
     public string url = "http://localhost:3000/api/v1";
     //http://studio6-api-host.op-bit.nz/api/v1
 
@@ -25,17 +24,11 @@ public class APIManagerNew : MonoBehaviour
         instance = this;
     }
 
-    //REUSABLE CODE
-    
-    /*public IEnumerator ReturnResult(UnityWebRequest request)
-    {
-        
-    }*/
 
     //REQUESTS 
     public IEnumerator LoginRequest(string newusername, string newpassword, string path)
     {
-        
+        string responseText;
         string jsonRequestBody = $"{{\"username\": \"{newusername}\", \"password\": \"{newpassword}\"}}";
         
         //Creating Request
@@ -47,8 +40,6 @@ public class APIManagerNew : MonoBehaviour
         request.SetRequestHeader("Content-Type", "application/json"); //adds the request header (this function is very important)
 
         //Sending request
-        //StartCoroutine(ReturnResult(request)); // sends a web request
-
         isLoading = true;
         yield return request.SendWebRequest();
         isLoading = false;
@@ -59,15 +50,10 @@ public class APIManagerNew : MonoBehaviour
         else
         {
             responseText = request.downloadHandler.text;
-            Debug.Log(responseText);
         }
-
 
         myData = JsonUtility.FromJson<LoginData>(responseText); //uses the response text from request to create a json object
         APIToken.token = myData.token; //sets the api token
-
-        Debug.Log(request.result);
-        Debug.Log(path);
 
         //Login/Register switching
         if(request.result == UnityWebRequest.Result.Success && path == "auth/register"){
