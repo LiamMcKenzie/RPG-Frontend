@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class NewCharacter : MonoBehaviour
 {
     public UnityWebRequest.Result requestResult;
+    public string responseText;
 
     public IEnumerator PostRequest(string name, string buildId, string gender)
     {
@@ -105,7 +106,9 @@ public class NewCharacter : MonoBehaviour
         {
             
         };*/
-        string jsonRequestBody = $"{{\"name\": \"{name}\", \"gender\": \"{gender}\", \"buildId\": \"{buildId}\"}}";
+        //string jsonRequestBody = $"{{\"name\": \"{name}\", \"gender\": \"{gender}\", \"buildId\": \"{buildId}\"}}";
+       string jsonRequestBody = $"{{\"name\": \"bob\", \"gender\": \"MALE\", \"buildId\": 1}}";
+
 
 
         // Convert the object to a JSON string
@@ -114,25 +117,27 @@ public class NewCharacter : MonoBehaviour
         // Create a POST request with the API endpoint
         UnityWebRequest request = UnityWebRequest.Post("http://localhost:3000/api/v1/character/create", jsonRequestBody);
 
-        // Set headers
-        request.SetRequestHeader("Authorization", "Bearer " + APIToken.token);
-        request.SetRequestHeader("Content-Type", "application/json");
 
         // Attach the request body as a byte array
         byte[] requestBodyBytes = System.Text.Encoding.UTF8.GetBytes(jsonRequestBody);
         request.uploadHandler = new UploadHandlerRaw(requestBodyBytes);
         
+        // Set headers
+        request.SetRequestHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjk0MDUzODQ4LCJleHAiOjE2OTQwNTc0NDh9.BNhbMiMubTIkWE_1S2dfgx4F7fQfpf9_6cu1AfjIAoY");
+        request.SetRequestHeader("Content-Type", "application/json");
+
         // Send the request and wait for the response
         yield return request.SendWebRequest();
 
         // Check for errors
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        if (request.result != UnityWebRequest.Result.Success)
         {
             Debug.LogError("Error: " + request.error);
         }
         else
         {
-            Debug.Log("Request successful!");
+            responseText = request.downloadHandler.text;
+            Debug.Log(responseText);
         }
     }
 
