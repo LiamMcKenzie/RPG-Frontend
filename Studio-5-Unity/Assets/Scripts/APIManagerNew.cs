@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class APIManagerNew : MonoBehaviour
 {
+    public string responseText;
     public static APIManagerNew instance;
     public LoginData myData;
     public bool isLoading = false;
@@ -28,7 +29,7 @@ public class APIManagerNew : MonoBehaviour
     //REQUESTS 
     public IEnumerator LoginRequest(string newusername, string newpassword, string path)
     {
-        string responseText;
+        
         string jsonRequestBody = $"{{\"username\": \"{newusername}\", \"password\": \"{newpassword}\"}}";
         
         //Creating Request

@@ -97,16 +97,19 @@ public class NewCharacter : MonoBehaviour
 
     public IEnumerator NewPostRequest()
     {
+        string name = "bob222";
+        string gender = "MALE";
+        int buildId = 1;
         // Create a JSON object to represent the data
-        var requestData = new
+        /*var requestData = new
         {
-            name = "bob222",
-            gender = "MALE",
-            buildId = 1
-        };
+            
+        };*/
+        string jsonRequestBody = $"{{\"name\": \"{name}\", \"gender\": \"{gender}\", \"buildId\": \"{buildId}\"}}";
+
 
         // Convert the object to a JSON string
-        string jsonRequestBody = JsonUtility.ToJson(requestData);
+        //string jsonRequestBody = JsonUtility.ToJson(requestData);
 
         // Create a POST request with the API endpoint
         UnityWebRequest request = UnityWebRequest.Post("http://localhost:3000/api/v1/character/create", jsonRequestBody);
