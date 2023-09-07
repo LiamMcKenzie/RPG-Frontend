@@ -39,7 +39,8 @@ public class SubmitRegister : MonoBehaviour
     {
         if(passwordTMP.text == confirmPasswordTMP.text)
         {
-            APIManagerNew.instance.LoginRequest(username, password, "auth/register");
+            StartCoroutine(APIManagerNew.instance.LoginRequest(username, password, "auth/register"));
+            //APIManagerNew.instance.StartCoroutine(LoginRequest(username, password, "auth/register"));
         }else{
             debugDialog.text = "Passwords do not match. Please make sure both passwords are the same.";
         }
@@ -47,7 +48,9 @@ public class SubmitRegister : MonoBehaviour
 
     public void LoginRequest()
     {
-        APIManagerNew.instance.LoginRequest(username, password, "auth/login");
+        StartCoroutine(APIManagerNew.instance.LoginRequest(username, password, "auth/login"));
+        //StartCoroutine(LoginRequest(username, password, "auth/login"));
+        //APIManagerNew.instance.LoginRequest(username, password, "auth/login");
     }
 
 

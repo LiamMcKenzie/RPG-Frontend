@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class APIManagerNew : MonoBehaviour
 {
@@ -25,8 +26,29 @@ public class APIManagerNew : MonoBehaviour
     }
 
     //REUSABLE CODE
-    public IEnumerator ReturnResult(UnityWebRequest request)
+    
+    /*public IEnumerator ReturnResult(UnityWebRequest request)
     {
+        
+    }*/
+
+    //REQUESTS 
+    public IEnumerator LoginRequest(string newusername, string newpassword, string path)
+    {
+        
+        string jsonRequestBody = $"{{\"username\": \"{newusername}\", \"password\": \"{newpassword}\"}}";
+        
+        //Creating Request
+        UnityWebRequest request = UnityWebRequest.Post($"{url}/{path}", jsonRequestBody);
+        
+        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonRequestBody); //idk what these two lines do
+        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+
+        request.SetRequestHeader("Content-Type", "application/json"); //adds the request header (this function is very important)
+
+        //Sending request
+        //StartCoroutine(ReturnResult(request)); // sends a web request
+
         isLoading = true;
         yield return request.SendWebRequest();
         isLoading = false;
@@ -39,33 +61,13 @@ public class APIManagerNew : MonoBehaviour
             responseText = request.downloadHandler.text;
             Debug.Log(responseText);
         }
-    }
 
-    //REQUESTS 
-    public void LoginRequest(string newusername, string newpassword, string path)
-    {
-        
-        //Creating json data
-        var jsonData = new
-        {
-            username = newusername,
-            password = newpassword
-        };
-        //string jsonData = $"{{\"username\": \"{username}\", \"password\": \"{password}\"}}";
-        string jsonRequestBody = JsonUtility.ToJson(jsonData);
-        
-        //Creating Request
-        UnityWebRequest request = UnityWebRequest.Post($"{url}/{path}", jsonRequestBody);
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonRequestBody);
-        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-        request.SetRequestHeader("Content-Type", "application/json");
 
-        //Sending request
-        StartCoroutine(ReturnResult(request)); // sends a web request
         myData = JsonUtility.FromJson<LoginData>(responseText); //uses the response text from request to create a json object
-        Debug.Log(myData);
         APIToken.token = myData.token; //sets the api token
-        Debug.Log(APIToken.token);
+
+        Debug.Log(request.result);
+        Debug.Log(path);
 
         //Login/Register switching
         if(request.result == UnityWebRequest.Result.Success && path == "auth/register"){
@@ -73,7 +75,7 @@ public class APIManagerNew : MonoBehaviour
         }
 
         if(request.result == UnityWebRequest.Result.Success && path == "auth/login"){
-            //SceneManager.LoadScene("CharacterCreate");
+            SceneManager.LoadScene("CharacterCreate");
         }
 
         request.Dispose();
