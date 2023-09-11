@@ -123,7 +123,7 @@ public class NewCharacter : MonoBehaviour
         request.uploadHandler = new UploadHandlerRaw(requestBodyBytes);
         
         // Set headers
-        request.SetRequestHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjk0MDUzODQ4LCJleHAiOjE2OTQwNTc0NDh9.BNhbMiMubTIkWE_1S2dfgx4F7fQfpf9_6cu1AfjIAoY");
+        request.SetRequestHeader("Authorization", "Bearer "+ APIToken.token);
         request.SetRequestHeader("Content-Type", "application/json");
 
         // Send the request and wait for the response
