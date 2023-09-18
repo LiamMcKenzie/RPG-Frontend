@@ -7,9 +7,11 @@ using UnityEngine.UI;
 
 public class SubmitCreateCharacter : MonoBehaviour
 {
+    public TMP_InputField nameTMP;
+    //public TMP_InputField genderTMP;
     public NewCharacter characterManager;
     public string name = "name";
-    public string gender = "gender";
+    public string gender = "MALE";
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +23,13 @@ public class SubmitCreateCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        name = nameTMP.text;
     }
 
     public void CreateCharacter()
     {
         //Debug.Log(APIToken.token);
-        StartCoroutine(characterManager.NewPostRequest());
+        StartCoroutine(characterManager.NewPostRequest(name, gender));
         
         
     }

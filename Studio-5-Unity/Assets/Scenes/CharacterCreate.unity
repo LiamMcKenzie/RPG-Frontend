@@ -5867,7 +5867,7 @@ GameObject:
   - component: {fileID: 963163151}
   - component: {fileID: 963163150}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: InputField (TMP) name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8587,6 +8587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requestResult: 0
+  responseText: 
 --- !u!4 &1392231054
 Transform:
   m_ObjectHideFlags: 0
@@ -10435,6 +10436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2645483753563414487c69ced0b86854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nameTMP: {fileID: 963163150}
   characterManager: {fileID: 1392231053}
   name: guy
   gender: Male

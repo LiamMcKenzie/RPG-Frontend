@@ -96,20 +96,21 @@ public class NewCharacter : MonoBehaviour
         
     }*/
 
-    public IEnumerator NewPostRequest()
+    public IEnumerator NewPostRequest(string name, string gender)
     {
-        string name = "bob222";
-        string gender = "MALE";
+        //string name = "bob222";
+        //string gender = "MALE";
         int buildId = 1;
         // Create a JSON object to represent the data
         /*var requestData = new
         {
             
         };*/
+
         //string jsonRequestBody = $"{{\"name\": \"{name}\", \"gender\": \"{gender}\", \"buildId\": \"{buildId}\"}}";
-       string jsonRequestBody = $"{{\"name\": \"bob\", \"gender\": \"MALE\", \"buildId\": 1}}";
+        string jsonRequestBody = $"{{\"name\": \"{name}\", \"gender\": \"{gender}\", \"buildId\": {buildId}}}";
 
-
+        Debug.Log(jsonRequestBody);
 
         // Convert the object to a JSON string
         //string jsonRequestBody = JsonUtility.ToJson(requestData);
@@ -137,6 +138,7 @@ public class NewCharacter : MonoBehaviour
         else
         {
             responseText = request.downloadHandler.text;
+            Debug.Log("successfully create character");
             Debug.Log(responseText);
         }
     }
@@ -158,8 +160,8 @@ public class NewCharacter : MonoBehaviour
         else
         {
             string responseText = request.downloadHandler.text;
+            Debug.Log("list of characters");
             Debug.Log(responseText);
-            Debug.Log("Request successful!");
         }
     }
     
