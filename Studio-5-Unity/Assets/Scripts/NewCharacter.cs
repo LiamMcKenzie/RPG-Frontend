@@ -9,6 +9,12 @@ public class NewCharacter : MonoBehaviour
     public UnityWebRequest.Result requestResult;
     public string responseText;
 
+    void Start()
+    {
+        StartCoroutine(NewGetAllCharacters());
+        //StartCoroutine(characterManager.NewSeedBuild());
+    }
+
     public IEnumerator PostRequest(string name, string buildId, string gender)
     {
         //playerName = "Liam02";
@@ -98,40 +104,43 @@ public class NewCharacter : MonoBehaviour
 
     public IEnumerator NewPostRequest(string name, string gender)
     {
-        //string name = "bob222";
-        //string gender = "MALE";
+        //name = "bob2225356456";
+        //gender = "MALE";
         int buildId = 1;
         // Create a JSON object to represent the data
         /*var requestData = new
         {
             
         };*/
-
+        Debug.Log(APIToken.token);
         //string jsonRequestBody = $"{{\"name\": \"{name}\", \"gender\": \"{gender}\", \"buildId\": \"{buildId}\"}}";
         string jsonRequestBody = $"{{\"name\": \"{name}\", \"gender\": \"{gender}\", \"buildId\": {buildId}}}";
 
         Debug.Log(jsonRequestBody);
 
+        string path = "character/create";
+
+        yield return StartCoroutine(APIManagerNew.instance.CreateRequest("POST",path,jsonRequestBody));
         // Convert the object to a JSON string
         //string jsonRequestBody = JsonUtility.ToJson(requestData);
 
         // Create a POST request with the API endpoint
-        UnityWebRequest request = UnityWebRequest.Post("http://localhost:3000/api/v1/character/create", jsonRequestBody);
+        //UnityWebRequest request = UnityWebRequest.Post("http://localhost:3000/api/v1/character/create", jsonRequestBody);
 
 
         // Attach the request body as a byte array
-        byte[] requestBodyBytes = System.Text.Encoding.UTF8.GetBytes(jsonRequestBody);
-        request.uploadHandler = new UploadHandlerRaw(requestBodyBytes);
+        //byte[] requestBodyBytes = System.Text.Encoding.UTF8.GetBytes(jsonRequestBody);
+        //request.uploadHandler = new UploadHandlerRaw(requestBodyBytes);
         
         // Set headers
-        request.SetRequestHeader("Authorization", "Bearer "+ APIToken.token);
-        request.SetRequestHeader("Content-Type", "application/json");
+        //request.SetRequestHeader("Authorization", "Bearer "+ APIToken.token);
+        //request.SetRequestHeader("Content-Type", "application/json");
 
         // Send the request and wait for the response
-        yield return request.SendWebRequest();
-
+        //yield return request.SendWebRequest();
+        Debug.Log(APIManagerNew.instance.responseText);
         // Check for errors
-        if (request.result != UnityWebRequest.Result.Success)
+       /*  if (request.result != UnityWebRequest.Result.Success)
         {
             Debug.LogError("Error: " + request.error);
         }
@@ -140,20 +149,24 @@ public class NewCharacter : MonoBehaviour
             responseText = request.downloadHandler.text;
             Debug.Log("successfully create character");
             Debug.Log(responseText);
-        }
+        } */
     }
 
 
     public IEnumerator NewGetAllCharacters()
     {
-        UnityWebRequest request = UnityWebRequest.Get($"http://localhost:3000/api/v1/character");
+        string path = "character";
+        yield return StartCoroutine(APIManagerNew.instance.CreateRequest("GET",path));
 
-        request.SetRequestHeader("Authorization", "Bearer " + APIToken.token);
-        request.SetRequestHeader("Content-Type", "application/json");
+        //UnityWebRequest request = UnityWebRequest.Get($"http://localhost:3000/api/v1/character");
 
-        yield return request.SendWebRequest();
+        //request.SetRequestHeader("Authorization", "Bearer " + APIToken.token);
+        //request.SetRequestHeader("Content-Type", "application/json");
 
-        if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+        //yield return request.SendWebRequest();
+        Debug.Log(APIManagerNew.instance.responseText);
+
+       /*  if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
         {
             Debug.LogError("Error: " + request.error);
         }
@@ -162,8 +175,12 @@ public class NewCharacter : MonoBehaviour
             string responseText = request.downloadHandler.text;
             Debug.Log("list of characters");
             Debug.Log(responseText);
-        }
+        } */
+
+
     }
+
+
     
     /*
     private IEnumerator SendRequest()

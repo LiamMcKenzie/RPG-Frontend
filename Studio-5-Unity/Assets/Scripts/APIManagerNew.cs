@@ -56,6 +56,7 @@ public class APIManagerNew : MonoBehaviour
                 break;
             
             case "POST" : 
+                Debug.Log($"{url}/{path}" + " " + jsonString);
                 request = UnityWebRequest.Post($"{url}/{path}", jsonString);
                 break;
             
@@ -85,6 +86,7 @@ public class APIManagerNew : MonoBehaviour
 
     }
 
+
     //REQUESTS 
     public IEnumerator LoginRequest(string newusername, string newpassword, string path)
     {
@@ -102,5 +104,6 @@ public class APIManagerNew : MonoBehaviour
 
         request.Dispose();
     }
+
 
 }
