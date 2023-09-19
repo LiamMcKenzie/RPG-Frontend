@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
-public class APIManager : MonoBehaviour
+public class APIManagerOld : MonoBehaviour
 {
-    public static APIManager Instance;
+    public static APIManagerOld Instance;
     // Make sure to replace the token with your actual API token
     private string apiToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGlmaWVyIjoiTElBTTAxIiwidmVyc2lvbiI6InYyIiwicmVzZXRfZGF0ZSI6IjIwMjMtMDctMjkiLCJpYXQiOjE2OTA3NjUwMDgsInN1YiI6ImFnZW50LXRva2VuIn0.bc-L2YiMNmz9Gdr1DT4MjwIGtMiISBqjroYL9Xr69fWv8lVP8epLOEjs0UYfE8L9j9jTzcTekEVXcM8sAPnOBNBQC871e1soE9wOFuePVv9hmTH3r4B3mxQ7yHN2uYowvnEGjcn_1XsphnhX40pEsXBt7xdEfALXyCs_1r5y1nkcKfZSL7gmudDrAFXs8OkR1o077TYrU7jQLGtFSOZo0lOuWx8IgQArGejfJGsvNWYbqrqGRQcsg5wMCBQO1Rd-CNpWfGR-ey1gVew8fDUcJH01IV8IgB5dykt2wKhx7A2Bhp66yzXZGlW-1Bx-4isXQtHY2aQva_8fb77iuBo_uw";
     private string apiUrl = "https://api.spacetraders.io/v2/my/agent";

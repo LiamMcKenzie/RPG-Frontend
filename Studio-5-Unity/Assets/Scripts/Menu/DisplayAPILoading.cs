@@ -16,6 +16,6 @@ public class DisplayAPILoading : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        loadingRenderer.SetActive(APIManagerNew.instance.isLoading);
+        loadingRenderer.SetActive(APIManager.instance.isLoading);
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
-public class APIManagerNew : MonoBehaviour
+public class APIManager : MonoBehaviour
 {
     public string responseText;
-    public static APIManagerNew instance;
+    public static APIManager instance;
     public RequestData myData;
     public bool isLoading = false;
     public string url = "http://localhost:3000/api/v1";
@@ -91,6 +91,7 @@ public class APIManagerNew : MonoBehaviour
     public IEnumerator LoginRequest(string newusername, string newpassword, string path)
     {
         string jsonRequestBody = $"{{\"username\": \"{newusername}\", \"password\": \"{newpassword}\"}}";
+        
         yield return StartCoroutine(CreateRequest("POST",path,jsonRequestBody));
 
         //Login/Register switching

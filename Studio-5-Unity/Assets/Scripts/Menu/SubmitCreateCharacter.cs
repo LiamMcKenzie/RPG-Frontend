@@ -9,7 +9,7 @@ public class SubmitCreateCharacter : MonoBehaviour
 {
     public TMP_InputField nameTMP;
     //public TMP_InputField genderTMP;
-    public NewCharacter characterManager;
+    public CharacterManager characterManager;
     public string name = "name";
     public string gender = "MALE";
 

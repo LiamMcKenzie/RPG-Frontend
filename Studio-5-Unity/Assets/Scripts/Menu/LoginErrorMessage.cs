@@ -12,14 +12,4 @@ public class LoginErrorMessage : MonoBehaviour
     {
         debugDialog = gameObject.GetComponent<TMP_Text>();
     }
-
-    // Update is called once per frame
-    /*
-    void Update()
-    {
-        if(APIManagerNew.instance.requestResult == UnityWebRequest.Result.ProtocolError)
-        {
-            debugDialog.text = "Account not found. Please check your login details or create an account if you're a new user.";
-        }
-    }*/
 }
