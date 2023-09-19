@@ -71,8 +71,8 @@ Material:
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.90909094
-    - _ScaleRatioB: 0.79545456
-    - _ScaleRatioC: 0.79545456
+    - _ScaleRatioB: 0.7386364
+    - _ScaleRatioC: 0.7386364
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -91,7 +91,7 @@ Material:
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
-    - _WeightBold: 0.5
+    - _WeightBold: 0.75
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Bangers SDF
+  m_Name: Bangers SDF new
   m_EditorClassIdentifier: 
   hashCode: 2134875903
   material: {fileID: 2100000}
@@ -205,6 +205,51 @@ MonoBehaviour:
       m_Y: 269
       m_Width: 48
       m_Height: 104
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 31
+    m_Metrics:
+      m_Width: 77.34375
+      m_Height: 103.640625
+      m_HorizontalBearingX: 0.140625
+      m_HorizontalBearingY: 104.90625
+      m_HorizontalAdvance: 67.21875
+    m_GlyphRect:
+      m_X: 465
+      m_Y: 909
+      m_Width: 78
+      m_Height: 104
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 32
+    m_Metrics:
+      m_Width: 73.125
+      m_Height: 107.71875
+      m_HorizontalBearingX: 1.40625
+      m_HorizontalBearingY: 106.03125
+      m_HorizontalAdvance: 65.953125
+    m_GlyphRect:
+      m_X: 556
+      m_Y: 137
+      m_Width: 74
+      m_Height: 109
+    m_Scale: 1
+    m_AtlasIndex: 0
+    m_ClassDefinitionType: 0
+  - m_Index: 33
+    m_Metrics:
+      m_Width: 69.1875
+      m_Height: 104.34375
+      m_HorizontalBearingX: 3.234375
+      m_HorizontalBearingY: 104.0625
+      m_HorizontalAdvance: 66.09375
+    m_GlyphRect:
+      m_X: 513
+      m_Y: 268
+      m_Width: 70
+      m_Height: 106
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
@@ -763,51 +808,6 @@ MonoBehaviour:
     m_Scale: 1
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
-  - m_Index: 31
-    m_Metrics:
-      m_Width: 77.34375
-      m_Height: 103.640625
-      m_HorizontalBearingX: 0.140625
-      m_HorizontalBearingY: 104.90625
-      m_HorizontalAdvance: 67.21875
-    m_GlyphRect:
-      m_X: 465
-      m_Y: 909
-      m_Width: 78
-      m_Height: 104
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 33
-    m_Metrics:
-      m_Width: 69.1875
-      m_Height: 104.34375
-      m_HorizontalBearingX: 3.234375
-      m_HorizontalBearingY: 104.0625
-      m_HorizontalAdvance: 66.09375
-    m_GlyphRect:
-      m_X: 513
-      m_Y: 268
-      m_Width: 70
-      m_Height: 106
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
-  - m_Index: 32
-    m_Metrics:
-      m_Width: 73.125
-      m_Height: 107.71875
-      m_HorizontalBearingX: 1.40625
-      m_HorizontalBearingY: 106.03125
-      m_HorizontalAdvance: 65.953125
-    m_GlyphRect:
-      m_X: 556
-      m_Y: 137
-      m_Width: 74
-      m_Height: 109
-    m_Scale: 1
-    m_AtlasIndex: 0
-    m_ClassDefinitionType: 0
   m_CharacterTable:
   - m_ElementType: 1
     m_Unicode: 10
@@ -824,6 +824,18 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 49
     m_GlyphIndex: 30
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 50
+    m_GlyphIndex: 31
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 51
+    m_GlyphIndex: 32
+    m_Scale: 1
+  - m_ElementType: 1
+    m_Unicode: 52
+    m_GlyphIndex: 33
     m_Scale: 1
   - m_ElementType: 1
     m_Unicode: 53
@@ -972,18 +984,6 @@ MonoBehaviour:
   - m_ElementType: 1
     m_Unicode: 121
     m_GlyphIndex: 102
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 50
-    m_GlyphIndex: 31
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 52
-    m_GlyphIndex: 33
-    m_Scale: 1
-  - m_ElementType: 1
-    m_Unicode: 51
-    m_GlyphIndex: 32
     m_Scale: 1
   m_AtlasTextures:
   - {fileID: 28584486757587946}
