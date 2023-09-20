@@ -32,7 +32,6 @@ public class KeyboardManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Return) && enterButton.interactable)
         {
-            Debug.Log("hi");
             enterButton.onClick.Invoke();
         }
     }
