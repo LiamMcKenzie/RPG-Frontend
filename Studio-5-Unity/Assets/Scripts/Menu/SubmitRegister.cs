@@ -26,7 +26,7 @@ public class SubmitRegister : MonoBehaviour
     {
         username = usernameTMP.text;
         password = passwordTMP.text;
-        if(username.Length < 3 || password.Length < 3)
+        if(username.Length < 2 || password.Length < 5)
         {
             button.interactable = false;
         }else
