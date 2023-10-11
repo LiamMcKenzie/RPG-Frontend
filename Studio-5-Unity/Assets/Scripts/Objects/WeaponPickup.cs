@@ -13,6 +13,8 @@ public class WeaponPickup : MonoBehaviour
     
     public List <Mesh> weaponMeshes = new List<Mesh>();
     public List <Material> axeMaterials = new List<Material>();
+    public List <Material> bowMaterials = new List<Material>();
+    public List <Material> staffMaterials = new List<Material>();
     public List <Color> tierColours = new List<Color>();
 
     public MeshRenderer texture;
@@ -42,6 +44,22 @@ public class WeaponPickup : MonoBehaviour
         trails.startColor = tierColours[weaponLevel];
         mesh.mesh = weaponMeshes[(int)weaponType];
         texture.material = axeMaterials[weaponLevel];
+
+        switch ((int)weaponType)
+        {
+        case 0:
+            texture.material = axeMaterials[weaponLevel];
+            break;
+        case 1:
+            texture.material = bowMaterials[weaponLevel];
+            break;
+        case 2:
+            texture.material = staffMaterials[weaponLevel];
+            break;
+        default:
+            texture.material = axeMaterials[weaponLevel];
+            break;
+        }
         
     }
 }
