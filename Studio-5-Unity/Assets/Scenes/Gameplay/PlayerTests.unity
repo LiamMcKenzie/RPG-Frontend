@@ -9858,6 +9858,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponMeshes: []
+  axeMaterials: []
+  tierColours: []
   texture: {fileID: 0}
   mesh: {fileID: 0}
   weaponLevel: 0
@@ -9978,6 +9980,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponMeshes: []
+  axeMaterials: []
+  tierColours: []
   texture: {fileID: 0}
   mesh: {fileID: 0}
   weaponLevel: 0
@@ -24868,7 +24872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.25098038, g: 0.7503267, b: 1, a: 1}
+  outlineColor: {r: 0, g: 0.6666667, b: 1, a: 1}
   outlineWidth: 2.29
   precomputeOutline: 0
   bakeKeys: []
@@ -35066,10 +35070,19 @@ MonoBehaviour:
   - {fileID: -2372584552947546636, guid: 439a532aec13bc04e85ea9ffb8759869, type: 3}
   - {fileID: -6665426260531058033, guid: 7d58dd8d9be70844ea75845156e4179d, type: 3}
   - {fileID: 1781805468462327908, guid: acd76795deeadd846a39bed2115bcc9b, type: 3}
+  axeMaterials:
+  - {fileID: 2100000, guid: 8dc0e2b07e28ab44cbb8486fe8f9ec6a, type: 2}
+  - {fileID: 2100000, guid: d8c20f3185f69384abcb999ecebf6c88, type: 2}
+  - {fileID: 2100000, guid: 52d2880db7b38b349bf63d58531bc99c, type: 2}
+  tierColours:
+  - {r: 0, g: 0.6666667, b: 1, a: 1}
+  - {r: 0.6666667, g: 0, b: 1, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
   texture: {fileID: 1222219021}
   mesh: {fileID: 1222219022}
-  weaponLevel: 1
-  weaponType: 0
+  weaponLevel: 0
+  weaponType: 2
   trails: {fileID: 866888262}
 --- !u!135 &1713957673
 SphereCollider:
@@ -40007,6 +40020,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponMeshes: []
+  axeMaterials: []
+  tierColours: []
   texture: {fileID: 0}
   mesh: {fileID: 0}
   weaponLevel: 0
