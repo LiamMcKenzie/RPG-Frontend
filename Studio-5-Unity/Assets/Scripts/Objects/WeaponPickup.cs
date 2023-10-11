@@ -17,10 +17,13 @@ public class WeaponPickup : MonoBehaviour
 
     public MeshRenderer texture;
     public MeshFilter mesh;
+    public Outline outline;
+    public ParticleSystem trails;
+    public ParticleSystem sparkles;
+
 
     public int weaponLevel;
     public WeaponType weaponType;
-    public ParticleSystem trails;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,6 +37,8 @@ public class WeaponPickup : MonoBehaviour
 
     public void Update()
     {
+        outline.OutlineColor = tierColours[weaponLevel];
+        sparkles.startColor = tierColours[weaponLevel];
         trails.startColor = tierColours[weaponLevel];
         mesh.mesh = weaponMeshes[(int)weaponType];
         texture.material = axeMaterials[weaponLevel];

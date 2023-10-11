@@ -32,13 +32,14 @@ public class Outline : MonoBehaviour {
     }
   }
 
+  //public Color OutlineColor;
   public Color OutlineColor {
     get { return outlineColor; }
     set {
       outlineColor = value;
       needsUpdate = true;
     }
-  }
+  } 
 
   public float OutlineWidth {
     get { return outlineWidth; }

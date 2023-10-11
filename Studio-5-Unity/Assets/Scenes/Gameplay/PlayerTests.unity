@@ -9862,9 +9862,11 @@ MonoBehaviour:
   tierColours: []
   texture: {fileID: 0}
   mesh: {fileID: 0}
+  outline: {fileID: 0}
+  trails: {fileID: 1632939892}
+  sparkles: {fileID: 0}
   weaponLevel: 0
   weaponType: 0
-  trails: {fileID: 1632939892}
 --- !u!135 &514158133
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9984,9 +9986,11 @@ MonoBehaviour:
   tierColours: []
   texture: {fileID: 0}
   mesh: {fileID: 0}
+  outline: {fileID: 0}
+  trails: {fileID: 1947216007}
+  sparkles: {fileID: 0}
   weaponLevel: 0
   weaponType: 0
-  trails: {fileID: 1947216007}
 --- !u!135 &667236387
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -35081,9 +35085,11 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0, a: 1}
   texture: {fileID: 1222219021}
   mesh: {fileID: 1222219022}
-  weaponLevel: 0
-  weaponType: 2
+  outline: {fileID: 1222219020}
   trails: {fileID: 866888262}
+  sparkles: {fileID: 1111532241}
+  weaponLevel: 1
+  weaponType: 0
 --- !u!135 &1713957673
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -40024,9 +40030,11 @@ MonoBehaviour:
   tierColours: []
   texture: {fileID: 0}
   mesh: {fileID: 0}
+  outline: {fileID: 0}
+  trails: {fileID: 55983563}
+  sparkles: {fileID: 0}
   weaponLevel: 0
   weaponType: 0
-  trails: {fileID: 55983563}
 --- !u!135 &2044081693
 SphereCollider:
   m_ObjectHideFlags: 0
