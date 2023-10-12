@@ -69,26 +69,21 @@ public class EquipWeapon : MonoBehaviour
     /// Enables the characters weapon in the inspector
     /// Swaps the player weapon gameobject to the pickup item
     /// </summary>
-    public void EquipWeaponCheck(MeshRenderer mr, MeshFilter mf)
+    public void EquipWeaponCheck(MeshRenderer newTexture, MeshFilter newMesh)
     {
-        MeshRenderer texture;
-        MeshFilter mesh;
+        MeshRenderer meshRenderer;
+        MeshFilter meshFilter;
 
         if (!WeaponEnabledCheck())
         {
             playerWeapon.SetActive(true);
         }
 
-        mesh = playerWeapon.GetComponent<MeshFilter>();
-        texture = playerWeapon.GetComponent<MeshRenderer>();
+        meshRenderer = playerWeapon.GetComponent<MeshRenderer>();
+        meshFilter = playerWeapon.GetComponent<MeshFilter>();
 
-        mesh.mesh = mf.mesh;
-        texture.material = mr.material;
-
-        Debug.Log(mesh);
-        Debug.Log(mf);
-        Debug.Log(texture);
-        Debug.Log(mr.material);
+        meshRenderer.material = newTexture.material;
+        meshFilter.mesh = newMesh.mesh;
 
         hasWeapon = WeaponEnabledCheck();
         //pickupLevel = GetWeaponLevel(mr, mf);
