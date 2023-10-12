@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628898560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 500.2, y: 1.375, z: 496}
+  m_LocalPosition: {x: 0.2000122, y: 1.375, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,6 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4253997607449492336}
+  - component: {fileID: 1966975897528851373}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -222,6 +223,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1966975897528851373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4253997607449492337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8055528282c02674991741270a835f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerWeapon: {fileID: 4019556781981694350}
+  playerLevel: 0
+  currentWeaponLevel: 0
+  hasWeapon: 0
+  pickupWeapon: {fileID: 0}
+  pickupLevel: 0
+  canEquip: 0
 --- !u!1 &9005778842969972540
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +251,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4072553987279081530}
-  - component: {fileID: 6063071709374738883}
   m_Layer: 0
   m_Name: WeaponController
   m_TagString: Untagged
@@ -255,25 +274,6 @@ Transform:
   m_Father: {fileID: 2503034387194311596}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6063071709374738883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9005778842969972540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8055528282c02674991741270a835f38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerWeapon: {fileID: 4019556781981694350}
-  playerLevel: 0
-  currentWeaponLevel: 0
-  hasWeapon: 0
-  pickupWeapon: {fileID: 0}
-  pickupLevel: 0
-  canEquip: 0
 --- !u!1001 &4253997607871497439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.20000005
+      value: 0.2000122
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
       propertyPath: m_LocalPosition.y

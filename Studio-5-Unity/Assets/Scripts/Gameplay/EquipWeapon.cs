@@ -41,20 +41,12 @@ public class EquipWeapon : MonoBehaviour
         hasWeapon = WeaponEnabledCheck(); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        EquipWeaponCheck();
-    }
-
     /// <summary>
     /// If the player has already equipped an item or not
     /// </summary>
     /// <returns>(Type:Bool)  Checks if the players current weapon gameobject is active in the inspector</returns>
     private bool WeaponEnabledCheck()
     {
-        //NEED TO ADD MORE TO THIS
-
         return playerWeapon.gameObject.activeSelf;
     }
 
@@ -62,8 +54,9 @@ public class EquipWeapon : MonoBehaviour
     /// Gets the level of the weapon in the current location
     /// </summary>
     /// <returns>(Type:int) Level of weapon returned from API Get request</returns>
-    private int GetWeaponLevel()
+    private int GetWeaponLevel(GameObject weapon)
     {
+        //itemLevel = weapon.level;
         int itemLevel;
         //itemLevel = Get(Location.item.level); REPLACE API REQUEST CODE HERE
         itemLevel = 4;
@@ -76,10 +69,24 @@ public class EquipWeapon : MonoBehaviour
     /// Enables the characters weapon in the inspector
     /// Swaps the player weapon gameobject to the pickup item
     /// </summary>
-    private void EquipWeaponCheck()
+    public void EquipWeaponCheck(MeshRenderer mr, MeshFilter mf)
     {
-        pickupLevel = GetWeaponLevel();
+        MeshRenderer texture;
+        MeshFilter mesh;
 
+        if (!WeaponEnabledCheck())
+        {
+            playerWeapon.SetActive(true);
+        }
+
+        mesh = playerWeapon.GetComponent<MeshFilter>();
+        mesh = mf;
+        texture = playerWeapon.GetComponent<MeshRenderer>();
+        texture = mr;
+
+        //pickupLevel = GetWeaponLevel(mr, mf);
+
+        /*
         if (playerLevel >= pickupLevel)
         {
             canEquip = true;
@@ -88,7 +95,11 @@ public class EquipWeapon : MonoBehaviour
             {
                 playerWeapon.SetActive(true); 
             }
-            hasWeapon = WeaponEnabledCheck();
+
+            mesh = playerWeapon.GetComponent<MeshFilter>();
+            mesh = mf;
+            texture = playerWeapon.GetComponent<MeshRenderer>();
+            texture = mr;
             playerWeapon = pickupWeapon; //Swap the player weapon gameobject
             Debug.Log("You successfully pickup the weapon");
         }
@@ -96,6 +107,8 @@ public class EquipWeapon : MonoBehaviour
         else
         {
             Debug.Log("Your character is not a high enough level to pick this up");
-        }
+        }*/
+
+        hasWeapon = WeaponEnabledCheck();
     }
 }
