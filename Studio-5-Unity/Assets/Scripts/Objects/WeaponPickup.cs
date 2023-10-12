@@ -31,6 +31,9 @@ public class WeaponPickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            other.gameObject.GetComponent<EquipWeapon>().EquipWeaponCheck(texture, mesh);
+            Debug.Log(other.gameObject.GetComponent<EquipWeapon>());
+            Debug.Log(other.gameObject);
             //Run Function here to update player status (increase level, give player weapon)
             trails.Play();
             Destroy(gameObject);

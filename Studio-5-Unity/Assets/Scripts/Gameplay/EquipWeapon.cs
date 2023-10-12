@@ -80,10 +80,17 @@ public class EquipWeapon : MonoBehaviour
         }
 
         mesh = playerWeapon.GetComponent<MeshFilter>();
-        mesh = mf;
         texture = playerWeapon.GetComponent<MeshRenderer>();
-        texture = mr;
 
+        mesh.mesh = mf.mesh;
+        texture.material = mr.material;
+
+        Debug.Log(mesh);
+        Debug.Log(mf);
+        Debug.Log(texture);
+        Debug.Log(mr.material);
+
+        hasWeapon = WeaponEnabledCheck();
         //pickupLevel = GetWeaponLevel(mr, mf);
 
         /*
@@ -109,6 +116,5 @@ public class EquipWeapon : MonoBehaviour
             Debug.Log("Your character is not a high enough level to pick this up");
         }*/
 
-        hasWeapon = WeaponEnabledCheck();
     }
 }
