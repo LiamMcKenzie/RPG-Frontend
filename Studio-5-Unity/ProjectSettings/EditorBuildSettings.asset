@@ -11,11 +11,20 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/CharacterCreate.unity
     guid: 6fcdda33decfe5540a6f0076f0787ebe
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gameplay/StarterIsland.unity
     guid: 446e8419d37259b4b963e51ed6f26378
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Gameplay/PlayerTests.unity
     guid: 6d97016f0241e284ea0079b641949434
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/ForestPaths.unity
+    guid: 263cc4155a883df4c8b3c1cbd2d451bd
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/Cave.unity
+    guid: aa7284037775c4b4b9807e3fad848bb1
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/VilliageTown.unity
+    guid: 72d003d302540714b860097c636517cf
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
