@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9120339527046402800}
   - component: {fileID: 3377633810721219708}
   - component: {fileID: 1329013939261274124}
+  - component: {fileID: 6394351956894948065}
   m_Layer: 8
   m_Name: Fighter Character
   m_TagString: Player
@@ -255,6 +256,18 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &6394351956894948065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329013939261274112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe27b9b92301dc40889902c81b3454b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6667438610490327387
 GameObject:
   m_ObjectHideFlags: 0

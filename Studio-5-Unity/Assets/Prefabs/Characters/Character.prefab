@@ -480,18 +480,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1329013939261274112, guid: 8e167994fc0080c4fb796da1e716d8e1, type: 3}
   m_PrefabInstance: {fileID: 8963134021551384718}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4253997608507053835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7931658928285028494}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08621f868de3ad14fb913d8f741bc423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2860070183301060150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,9 +493,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerWeapon: {fileID: 4019556781981694350}
-  playerLevel: 0
-  currentWeaponLevel: 0
   hasWeapon: 0
-  pickupWeapon: {fileID: 0}
-  pickupLevel: 0
-  canEquip: 0
+--- !u!114 &4253997608507053835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931658928285028494}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08621f868de3ad14fb913d8f741bc423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
