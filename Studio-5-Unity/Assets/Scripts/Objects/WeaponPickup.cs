@@ -29,8 +29,9 @@ public class WeaponPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && (weaponLevel <= PlayerStats.Instance.level))
         {
+            other.gameObject.GetComponent<EquipWeapon>().EquipWeaponCheck(texture, mesh);
             //Run Function here to update player status (increase level, give player weapon)
             trails.Play();
             Destroy(gameObject);
@@ -39,8 +40,17 @@ public class WeaponPickup : MonoBehaviour
 
     public void Update()
     {
-        outline.OutlineColor = tierColours[weaponLevel];
-        sparkles.startColor = tierColours[weaponLevel];
+
+        if(weaponLevel > PlayerStats.Instance.level)
+        {
+            outline.OutlineColor = tierColours[3];
+            sparkles.startColor = tierColours[3];
+        }else
+        {
+            outline.OutlineColor = tierColours[weaponLevel];
+            sparkles.startColor = tierColours[weaponLevel];
+        }
+
         trails.startColor = tierColours[weaponLevel];
         mesh.mesh = weaponMeshes[(int)weaponType];
         texture.material = axeMaterials[weaponLevel];
