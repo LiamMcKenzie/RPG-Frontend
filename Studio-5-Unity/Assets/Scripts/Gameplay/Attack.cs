@@ -14,22 +14,34 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
-        // Axe Downward Strike
+        // Axe Downward Swing
         if (Input.GetKey(KeyCode.Z)) 
         {
-            animator.SetTrigger("Axe_Attack_01"); // Trigger animation toggle
+            animator.SetTrigger("Axe_Attack_Swing"); // Trigger animation toggle
         }
 
         //Axe Side Slash
         if (Input.GetKey(KeyCode.X))
         {
-            animator.SetTrigger("Axe_Attack_02");
+            animator.SetTrigger("Axe_Attack_Slash");
         }
 
-        //Staff Thrust Attack
+        //Staff Cast Attack
         if (Input.GetKey(KeyCode.C))
         {
-            //animator.SetTrigger("Death_FallDown");
+            animator.SetTrigger("Staff_Attack_Cast");
+        }
+
+        //Bow Idle Attack
+        if (Input.GetKey(KeyCode.V))
+        {
+            animator.SetTrigger("Bow_Attack_Idle");
+        }
+
+        //Dancing Animation
+        if (Input.GetKey(KeyCode.P))
+        {
+            animator.SetTrigger("Dance_01");
         }
     }
 }
