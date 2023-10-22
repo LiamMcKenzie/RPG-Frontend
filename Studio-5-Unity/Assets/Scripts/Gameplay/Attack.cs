@@ -14,11 +14,22 @@ public class Attack : MonoBehaviour
 
     private void Update()
     {
-        // Detect left-click input (You can customize this based on your input setup).
-        if (Input.GetMouseButtonDown(0)) // 0 corresponds to the left mouse button.
+        // Axe Downward Strike
+        if (Input.GetKey(KeyCode.Z)) 
         {
-            // Trigger the "Attack" animation.
-            animator.SetTrigger("Attack");
+            animator.SetTrigger("Axe_Attack_01"); // Trigger animation toggle
+        }
+
+        //Axe Side Slash
+        if (Input.GetKey(KeyCode.X))
+        {
+            animator.SetTrigger("Axe_Attack_02");
+        }
+
+        //Staff Thrust Attack
+        if (Input.GetKey(KeyCode.C))
+        {
+            //animator.SetTrigger("Death_FallDown");
         }
     }
 }
