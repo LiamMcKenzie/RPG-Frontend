@@ -19,4 +19,21 @@ public class CharacterCreatorUI : MonoBehaviour
 
     public MenuState currentMenuState;
 
+
+    public void ChangePanels(int newMenuState)
+    {
+        //MenuState newMenuState
+        currentMenuState = (MenuState)newMenuState; //enums are weird. This sets the current enum value to the specified index
+        //hiddenPanels[(int)currentMenuState]
+
+        for(int i = 0; i < hiddenPanels.Count; i++)
+        {
+            hiddenPanels[i].SetActive(i + 1 > (int)currentMenuState);
+        }
+    }
+
+    /* public void Update()
+    {
+        ChangePanels();
+    } */
 }
