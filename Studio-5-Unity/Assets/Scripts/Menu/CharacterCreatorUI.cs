@@ -10,12 +10,12 @@ public class CharacterCreatorUI : MonoBehaviour
         characterSelect,
         classSelect,
         stats,
-        gender,
         name,
         finish
     }
 
     public TMP_Text pointsRemaining; 
+    public TMP_InputField nameText; 
     public List <GameObject> hiddenPanels = new List<GameObject>();
 
     public MenuState currentMenuState;
@@ -42,6 +42,11 @@ public class CharacterCreatorUI : MonoBehaviour
                 //currentMenuState = MenuState.gender;
                 ChangePanels(3);
             }
+        }
+
+        if(nameText.text.Length >= 3)
+        {
+            ChangePanels(4);
         }
     } 
 }
