@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CharacterCreatorUI : MonoBehaviour
 {
-
     public enum MenuState
     {
         characterSelect,
@@ -15,6 +15,7 @@ public class CharacterCreatorUI : MonoBehaviour
         finish
     }
 
+    public TMP_Text pointsRemaining; 
     public List <GameObject> hiddenPanels = new List<GameObject>();
 
     public MenuState currentMenuState;
@@ -32,8 +33,15 @@ public class CharacterCreatorUI : MonoBehaviour
         }
     }
 
-    /* public void Update()
+    public void Update()
     {
-        ChangePanels();
-    } */
+        if(pointsRemaining.text == "0")
+        {
+            if(currentMenuState == MenuState.stats) //if all points are used during stats screen, move to gender select
+            {
+                //currentMenuState = MenuState.gender;
+                ChangePanels(3);
+            }
+        }
+    } 
 }
