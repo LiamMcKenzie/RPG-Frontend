@@ -12,10 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/CharacterCreate.unity
     guid: 6fcdda33decfe5540a6f0076f0787ebe
   - enabled: 1
-    path: Assets/Scenes/Gameplay/StarterIsland.unity
-    guid: 446e8419d37259b4b963e51ed6f26378
+    path: Assets/Scenes/Gameplay/Cave.unity
+    guid: aa7284037775c4b4b9807e3fad848bb1
   - enabled: 1
-    path: Assets/Scenes/Gameplay/PlayerTests.unity
-    guid: 6d97016f0241e284ea0079b641949434
+    path: Assets/Scenes/Gameplay/ForestPaths.unity
+    guid: 075f77c2e932ad048856cb7f7fa4b626
+  - enabled: 1
+    path: Assets/Scenes/Gameplay/VilliageTown.unity
+    guid: 5aca3436068ff9442bbd2efbb6796fc5
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
