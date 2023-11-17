@@ -2,7 +2,7 @@
 ![image3](https://github.com/OtagoPolytechnic/RPG-Frontend/assets/90590068/98fb873c-6fb0-40ea-ae91-27c1ae11d2bb)
 [itch.io link](https://mckeld3.itch.io/emberstorm-chronicles-of-reckoning)
 
-3rd person RPG built on a api backend
+3rd person RPG built on an api backend
 
 ## Team Info
 This project is made up of a frontend team and a backend team.
